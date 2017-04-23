@@ -9,7 +9,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     methods: {
       addTask: function() {
         //console.log("I'm gonna add the review now...", this.newReview);
-        this.tasks.push(this.newTask);
+        if (this.newTask !== "") {
+          this.tasks.push(this.newTask);
+          this.newTask = "";
+        }
+      },
+      deleteTask: function(inputTask) {
+        var index = this.tasks.indexOf(inputTask);
+        this.tasks.splice(index, 1);
       }
     }
   });

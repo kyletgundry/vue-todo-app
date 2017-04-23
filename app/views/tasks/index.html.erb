@@ -1,12 +1,16 @@
 <h1>Tasks:</h1>
 
 <div id="app">
-  <ol>
-    <li v-for="task in tasks">Task: {{ task }}</h3>
-  </ol>
-  <input type="text" v-model="tasks[0]">
-  <h6><input type="submit" value="save"></h6>
+  <div v-for="task in tasks" v-on:click="deleteTask(task)">
+    <ul>
+      <li>Task: {{ task }}</h3>
+    </ul>
+<!--     <input type="text" v-model="task">
+    <input type="submit" value="update"> -->
+  </div>
+
   <h4>Add Task:</h4>
   <input type="text" v-model="newTask">
   <button v-on:click="addTask()">Add Task</button>
+  </form>
 </div>
